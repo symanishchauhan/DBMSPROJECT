@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col items-center mt-12">
+
+<h2 class="text-3xl font-bold mb-10">User Dashboard</h2>
+
+<div class="grid grid-cols-2 gap-8 w-[650px]">
+
+<!-- SEARCH -->
+<a href="/search?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">Search Item</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Search lost items reported in the system
+</p>
+
+</a>
+
+
+<!-- REPORT -->
+<a href="/report?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">Report Item</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Report a lost or found item
+</p>
+
+</a>
+
+
+<!-- CLAIM -->
+<a href="/claim?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">Claim Item</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Request ownership of an item
+</p>
+
+</a>
+
+
+<!-- MY REPORTED ITEMS -->
+<a href="/my_reports?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">My Reported Items</div>
+
+<p class="text-gray-500 text-sm mt-2">
+View items you have reported
+</p>
+
+</a>
+
+
+<!-- MY CLAIMS -->
+<a href="/my_claims?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">My Claims</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Check your claim requests
+</p>
+
+</a>
+
+
+<!-- ACTIVITY SUMMARY -->
+<a href="/activity_summary?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">Activity Summary</div>
+
+<p class="text-gray-500 text-sm mt-2">
+View your system activity
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

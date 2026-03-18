@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Login</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+/* Floating animation */
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-30px);}
+100%{transform:translateY(0px);}
+}
+
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(60px);
+opacity:0.5;
+animation:float 6s ease-in-out infinite;
+}
+
+.circle1{
+width:300px;
+height:300px;
+background:#60a5fa;
+top:10%;
+left:5%;
+}
+
+.circle2{
+width:250px;
+height:250px;
+background:#818cf8;
+bottom:10%;
+left:25%;
+animation-delay:2s;
+}
+
+.circle3{
+width:300px;
+height:300px;
+background:#38bdf8;
+top:30%;
+right:10%;
+animation-delay:3s;
+}
+
+.fade-in{
+animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body class="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-600 min-h-screen overflow-hidden">
+
+
+<!-- FLOATING BACKGROUND SHAPES -->
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+<div class="circle circle3"></div>
+
+
+<!-- HEADER -->
+<div class="bg-white shadow-md p-4 flex items-center justify-center relative z-10">
+
+<div class="absolute left-5">
+<img src="https://www.dsc.du.ac.in/wp-content/uploads/2022/01/logo-black.png"
+class="h-16 bg-white p-1 rounded">
+</div>
+
+<h1 class="text-3xl font-bold text-black tracking-wide">
+DYAL SINGH COLLEGE
+</h1>
+
+</div>
+
+
+<!-- MAIN SPLIT SCREEN -->
+<div class="flex min-h-[80vh] relative z-10">
+
+<!-- ABOUT SYSTEM -->
+<div class="w-1/2 flex items-center px-16">
+
+<div class="text-white fade-in">
+
+<h2 class="text-4xl font-bold mb-6">
+Smart Lost & Found Management System
+</h2>
+
+<p class="text-lg leading-relaxed opacity-95">
+
+The Smart Lost & Found Management System is the official digital
+platform developed for Dyal Singh College to simplify the process
+of reporting and recovering lost items across the campus.
+
+<br><br>
+
+Students and staff can easily report lost belongings, search
+the system database for missing items, and submit claims for
+items that belong to them.
+
+<br><br>
+
+This platform provides a centralized, transparent, and efficient
+mechanism for managing lost property within the college premises,
+ensuring that valuable belongings are returned to their rightful
+owners quickly and securely.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- LOGIN PANEL -->
+<div class="w-1/2 flex items-center justify-center">
+
+<div class="backdrop-blur-md bg-white/90 p-10 rounded-xl shadow-2xl w-96 fade-in">
+
+<h2 class="text-2xl font-bold text-center mb-6">
+Login to Continue
+</h2>
+
+<form action="/login" method="POST" onsubmit="saveEmail()">
+
+<!-- ROLE SELECT -->
+<div class="flex justify-center space-x-6 mb-5">
+
+<label class="flex items-center space-x-2 cursor-pointer">
+<input type="radio" name="role" value="student" checked>
+<span class="font-medium">Student</span>
+</label>
+
+<label class="flex items-center space-x-2 cursor-pointer">
+<input type="radio" name="role" value="admin">
+<span class="font-medium">Admin</span>
+</label>
+
+</div>
+
+
+<input
+type="email"
+name="email"
+placeholder="Enter Email"
+required
+class="w-full border p-3 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+/>
+
+<input
+type="password"
+name="password"
+placeholder="Enter Password"
+required
+class="w-full border p-3 rounded-lg mb-6 focus:outline-none focus:ring-2 focus:ring-blue-400"
+/>
+
+
+<button
+type="submit"
+class="bg-blue-600 text-white w-full p-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+Login
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+function saveEmail(){
+const email=document.querySelector("input[name='email']").value;
+sessionStorage.setItem("userEmail",email);
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<title>Claim Item</title>
+<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<h2 style="text-align:center">Available Items to Claim</h2>
+
+<table border="1" align="center">
+
+<tr>
+<th>Item Name</th>
+<th>Description</th>
+<th>Category</th>
+<th>Location</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+{% for item in items %}
+
+<tr>
+
+<td>{{ item.item_name }}</td>
+<td>{{ item.description }}</td>
+<td>{{ item.category }}</td>
+<td>{{ item.location }}</td>
+<td>{{ item.status }}</td>
+
+<td>
+<a href="/claim_item/{{ item.item_id }}">
+<button>Claim</button>
+</a>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+{% endblock %}

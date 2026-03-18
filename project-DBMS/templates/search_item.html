@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<title>Search Items</title>
+<link rel="stylesheet" href="/static/css/style.css">
+
+<style>
+
+body{
+background: linear-gradient(to right,#36d1dc,#5b86e5);
+font-family: Arial;
+}
+
+.search-container{
+text-align:center;
+margin-top:30px;
+margin-bottom:20px;
+}
+
+.search-container input{
+padding:10px;
+width:260px;
+border-radius:6px;
+border:none;
+}
+
+.search-container button{
+padding:10px 15px;
+background:#007bff;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+table{
+width:70%;
+margin:auto;
+border-collapse:collapse;
+background:white;
+}
+
+th{
+background:#4facfe;
+color:white;
+padding:12px;
+}
+
+td{
+padding:10px;
+text-align:center;
+border:1px solid #ddd;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2 style="text-align:center;color:white;">Search Items</h2>
+
+<!-- SEARCH BAR -->
+<div class="search-container">
+
+<form method="POST" action="/search">
+
+<input type="text" name="keyword" placeholder="Search Item Name">
+
+<button type="submit">Search</button>
+
+</form>
+
+</div>
+
+
+<!-- TABLE -->
+<table>
+
+<tr>
+<th>Item Name</th>
+<th>Category</th>
+<th>Location</th>
+<th>Status</th>
+</tr>
+
+{% if items %}
+
+{% for item in items %}
+
+<tr>
+
+<td>{{ item.item_name }}</td>
+<td>{{ item.category }}</td>
+<td>{{ item.location }}</td>
+<td>{{ item.status }}</td>
+
+</tr>
+
+{% endfor %}
+
+{% endif %}
+
+</table>
+
+{% if message %}
+
+<h3 style="text-align:center;color:red;margin-top:20px;">
+{{ message }}
+</h3>
+
+{% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col items-center mt-12">
+
+<h2 class="text-3xl font-bold mb-10">Admin Dashboard</h2>
+
+<div class="grid grid-cols-2 gap-8 w-[650px]">
+
+<!-- SEARCH ITEM -->
+<a href="/search?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Search Item
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+View and search reported lost items
+</p>
+
+</a>
+
+
+<!-- REPORT ITEM -->
+<a href="/report?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Report Item
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Add new lost or found items to the system
+</p>
+
+</a>
+
+
+<!-- CLAIM ITEM -->
+<a href="/claim?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Claim Item
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Verify and manage item claim requests
+</p>
+
+</a>
+
+
+<!-- CLAIMED ITEMS -->
+<a href="/claimed?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Claimed Items
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+View items that have already been claimed
+</p>
+
+</a>
+
+
+<!-- STATISTICS -->
+<a href="/statistics?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Statistics
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+View analytics and system statistics
+</p>
+
+</a>
+
+
+<!-- LIVE ACTIVITY -->
+<a href="/live_activity?email={{email}}"
+class="bg-white shadow-xl rounded-xl p-8 hover:shadow-2xl transition border text-center">
+
+<div class="text-xl font-semibold">
+Live Activity
+</div>
+
+<p class="text-gray-500 text-sm mt-2">
+Monitor real-time user activity in the system
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+{% endblock %}

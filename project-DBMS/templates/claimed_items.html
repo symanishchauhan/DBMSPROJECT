@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<h1 style="text-align:center">Claimed Items</h1>
+
+<table>
+
+<tr>
+
+<th>Item</th>
+<th>Claim Date</th>
+<th>Status</th>
+
+</tr>
+
+{% for c in data %}
+
+<tr>
+
+<td>{{c.item_name}}</td>
+<td>{{c.claim_date}}</td>
+<td>{{c.approval_status}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+
+{% endblock %}

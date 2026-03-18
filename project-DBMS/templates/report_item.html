@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Report Lost Item</h1>
+
+<form action="/report" method="POST">
+
+<input type="text" name="item_name" placeholder="Item Name">
+
+<input type="text" name="description" placeholder="Description">
+
+<input type="text" name="category" placeholder="Category">
+
+<input type="text" name="location" placeholder="Location">
+
+<button type="submit">Submit</button>
+
+</form>
+
+</div>
+
+
+
+{% endblock %}

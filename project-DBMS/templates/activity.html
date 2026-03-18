@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="flex flex-col items-center mt-10">
+
+<h2 class="text-3xl font-bold mb-8">
+My Activity
+</h2>
+
+<div class="bg-white shadow-lg rounded-xl w-[700px]">
+
+<table class="w-full text-left">
+
+<thead class="bg-gray-100">
+<tr>
+<th class="p-4">Action</th>
+<th class="p-4">Time</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for act in activities %}
+
+<tr class="border-b hover:bg-gray-50">
+
+<td class="p-4">
+{{ act.action }}
+</td>
+
+<td class="p-4 text-gray-600">
+<span class="time">
+{{ act.activity_time }}
+</span>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+
+<script>
+
+// format time nicer
+
+document.querySelectorAll(".time").forEach(el=>{
+let date=new Date(el.innerText);
+el.innerText=date.toLocaleString();
+});
+
+</script>
+
+{% endblock %}
